@@ -7,6 +7,8 @@ const numbers = document.getElementById("numbers");
 const symbols = document.getElementById("symbols");
 const generateBtn = document.getElementById("getBtn");
 
+// copy icon
+const copyIcon = document.getElementById("copyIcon");
 const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz"
 const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const numbersLetter = "0123456789"
@@ -41,3 +43,20 @@ function generatePassword() {
  }
 return password;
 }
+
+copyIcon.addEventListener("click",()=>{
+
+    if(passBox.value !="" || passBox.value.length>=10){
+
+        navigator.clipboard.writeText(passBox.value);
+        copyIcon.innerText = "check";
+
+
+        setTimeout(()=>{
+
+            copyIcon.innerHTML = "content_copy";
+
+        },3000);
+
+    }
+});
