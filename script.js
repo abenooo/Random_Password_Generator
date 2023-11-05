@@ -1,0 +1,1 @@
+const copy = document.getElementById("sliderValue")
